@@ -1,0 +1,37 @@
+﻿@model WebApplication18.Models.Cascade
+ @{
+ }
+ 
+ <h1>Seçiminizi Yapınız</h1>
+ <div class="form-group">
+    @Html.Label("Kullanıcı Information")
+    @Html.DropDownList("KullaniciId", Model.KullanicilarList, "-- Araç Sahibini Seçiniz--", new { @class = "form-control" })
+ <br />
+    @Html.Label("Arac Information")
+    @Html.DropDownList("AracId", Model.AraclarList, "--Araç Modeli Seçiniz--", new { @class = "form-control" })
+
+ </div>
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+ <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="~/js/site.js" asp-append-version="true"></script>
+ <script>
+    $(function () {
+        $('#KullaniciId').change(function () {
+            var id = $('#KullaniciId').val();
+            $.ajax({
+                url: '/Demo/GetAraclar',
+                data: { KullaniciId: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    console.log(data);
+                    $('#AracId').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#AracId').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+                    }
+                }
+            });
+        });
+    });
+ </script>
+

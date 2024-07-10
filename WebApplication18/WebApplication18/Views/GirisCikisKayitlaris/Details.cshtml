@@ -1,0 +1,42 @@
+﻿@model WebApplication18.Models.GirisCikisKayitlari
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GirisCikisKayitlari</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GirisZamani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GirisZamani)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CikisZamani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CikisZamani)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Arac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Arac.AracId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkYeri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ParkYeri.ParkYeriId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.KayitId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

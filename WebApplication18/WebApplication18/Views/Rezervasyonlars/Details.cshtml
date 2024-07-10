@@ -1,0 +1,48 @@
+﻿@model WebApplication18.Models.Rezervasyonlar
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Rezervasyonlar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BaslangicZamani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BaslangicZamani)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitisZamani)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitisZamani)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Durum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Durum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kullanici)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kullanici.KullaniciId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkYeri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ParkYeri.ParkYeriId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.RezervasyonId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

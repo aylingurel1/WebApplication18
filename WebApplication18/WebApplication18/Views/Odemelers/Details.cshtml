@@ -1,0 +1,42 @@
+﻿@model WebApplication18.Models.Odemeler
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Odemeler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Miktar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Miktar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OdemeYontemi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OdemeYontemi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OdemeTarihi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OdemeTarihi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rezervasyon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rezervasyon.RezervasyonId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OdemeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
